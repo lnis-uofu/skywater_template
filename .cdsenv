@@ -1,0 +1,23 @@
+license	VLSL_UseNextLicense	string	"always"
+license	VLSXL_UseNextLicense	string	"always"
+license	ADEL_UseNextLicense	string	"always"
+license	VSEL_UseNextLicense	string	"always"
+;#Set the DRD edit mode to notify
+layout drdEditMode cyclic "notify"
+
+;#Set the DRD hierarchy Depth to current and below
+layout	drdEditHierDepth	int	1
+
+;; set snap spacing to 0.005 (5 nm) for layout
+layout xSnapSpacing float 0.005
+layout ySnapSpacing float 0.005 
+
+;; show all layers
+layout startLevel int 0
+layout stopLevel  int 31
+
+layout displayResolution string "Very High"
+layout displayPRHighestResolution boolean t
+
+;#Show the categories for the library manager
+cdsLibManager.main showCategoriesOn boolean t

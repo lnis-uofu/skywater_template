@@ -1,0 +1,21 @@
+# Cadence libraries
+DEFINE basic $CDSHOME/tools/dfII/etc/cdslib/basic
+DEFINE analogLib $CDSHOME/tools/dfII/etc/cdslib/artist/analogLib
+
+# S8PHIRS_10R Device Library
+DEFINE s8phirs_10r $PDK_HOME/VirtuosoOA/libs/s8phirs_10r
+
+# Legacy Libraries
+DEFINE tech $PDK_HOME/VirtuosoOA/libs/tech
+DEFINE technology_library $PDK_HOME/VirtuosoOA/libs/technology_library
+DEFINE s8rf $PDK_HOME/VirtuosoOA/libs/s8rf
+DEFINE s8rf2 $PDK_HOME/VirtuosoOA/libs/s8rf2
+DEFINE s8rf2_dv $PDK_HOME/VirtuosoOA/libs/s8rf2_dv
+
+#RRAM library
+#DEFINE s8rr $SW_PDK_ROOT/s8rr/V2.0.3/VirtuosoOA/libs/s8rr
+ 
+# S8PHIRS-10R HD Standard Cells
+DEFINE scs8hd $SW_PDK_ROOT/scs8hd/V0.0.2/oa/scs8hd
+DEFINE scs8_hd $SW_PDK_ROOT/scs8hd/V0.0.2/oa/scs8_hd
+
