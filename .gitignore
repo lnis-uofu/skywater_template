@@ -1,1 +1,5 @@
 calibre_rundir
+calibre/
+libs/
+simulations/
+*.log
