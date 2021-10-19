@@ -411,16 +411,32 @@ module regfile #(parameter WIDTH = 8, REGBITS = 3)
                  output logic [WIDTH-1:0]   rd1, rd2);
 
 
-	//wire [REGBITS-1:0] address_reg0;
-	//wire [REGBITS-1:0] address_reg1;
+	////wire [REGBITS-1:0] address_reg0;
+	////wire [REGBITS-1:0] address_reg1;
 
-	//assign address_reg0 = regwrite ? wa : ra1;
-	//assign address_reg1 = regwrite ? wa : ra2;
+	////assign address_reg0 = regwrite ? wa : ra1;
+	////assign address_reg1 = regwrite ? wa : ra2;
 
-	//rfsphs8x8m1wm4 regfile0 (.Q(rd1), .CLK(clk), .CEN(1'b0), .A(address_reg0), .D(wd), .WEN({regwrite,regwrite}));
-	//rfsphs8x8m1wm4 regfile1 (.Q(rd2), .CLK(clk), .CEN(1'b0), .A(address_reg1), .D(wd), .WEN({regwrite,regwrite}));
-	rf2hsm1wm1 regfile (.AA(wa), .CLKA(clk), .CENA(1'b0), .WENB({regwrite,regwrite,regwrite,regwrite,regwrite,regwrite,regwrite,regwrite}), .AB(wa), .DB(wd), .CLKB(clk), .CENB(1'b0), .QA(rd1));
-	assign rd2 = rd1;
+	////rfsphs8x8m1wm4 regfile0 (.Q(rd1), .CLK(clk), .CEN(1'b0), .A(address_reg0), .D(wd), .WEN({regwrite,regwrite}));
+	////rfsphs8x8m1wm4 regfile1 (.Q(rd2), .CLK(clk), .CEN(1'b0), .A(address_reg1), .D(wd), .WEN({regwrite,regwrite}));
+	//rf2hsm1wm1 regfile (.AA(wa), .CLKA(clk), .CENA(1'b0), .WENB({regwrite,regwrite,regwrite,regwrite,regwrite,regwrite,regwrite,regwrite}), .AB(wa), .DB(wd), .CLKB(clk), .CENB(1'b0), .QA(rd1));
+	//assign rd2 = rd1;
+
+
+   reg  [WIDTH-1:0] RAM [(1<<REGBITS)-1:0];
+
+   // three ported register file
+   // read two ports combinationally
+   // write third port on rising edge of clock
+   // register 0 hardwired to 0
+   always @(posedge clk)
+      if (regwrite) RAM[wa] <= wd;	
+
+   assign rd1 = ra1 ? RAM[ra1] : 0;
+   assign rd2 = ra2 ? RAM[ra2] : 0;
+
+
+
 endmodule
 
 module zerodetect #(parameter WIDTH = 8)
