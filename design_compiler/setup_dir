@@ -1,0 +1,45 @@
+#!/bin/tcsh
+
+
+
+
+
+
+
+
+
+
+##############
+# Synopsys DC
+##############
+
+# Create sdc directory 
+if !( -f ${PWD}/SDC) then
+  mkdir ${PWD}/SDC
+endif
+
+# Create dlib directory 
+if !( -f ${PWD}/DDC) then
+  mkdir ${PWD}/DDC
+endif
+
+if !( -f ${PWD}/SDF) then
+  mkdir ${PWD}/SDF
+endif
+
+# Create RPT directory 
+if !( -f ${PWD}/RPT) then
+  mkdir ${PWD}/RPT
+endif
+
+
+# Create DESIGN_LIBS directory 
+if !( -f ${PWD}/DESIGN_LIBS) then
+  mkdir ${PWD}/DESIGN_LIBS
+endif
+
+
+# Create subdirectory for verilog/VHDL files
+if !( -f ${PWD}/HDL/GATE) then
+  mkdir ${PWD}/HDL/GATE
+endif
