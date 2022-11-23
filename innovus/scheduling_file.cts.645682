@@ -1,0 +1,4 @@
+MacroModel pin cont/statelog/state_reg[3]/CLK  300.00ps 300.00ps 300.00ps 300.00ps 0pf wc
+MacroModel pin cont/statelog/state_reg[2]/CLK  300.00ps 300.00ps 300.00ps 300.00ps 0pf wc
+MacroModel pin cont/statelog/state_reg[0]/CLK  300.00ps 300.00ps 300.00ps 300.00ps 0pf wc
+MacroModel pin cont/statelog/state_reg[1]/CLK  300.00ps 300.00ps 300.00ps 300.00ps 0pf wc
